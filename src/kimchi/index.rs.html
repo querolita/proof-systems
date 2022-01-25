@@ -1,4 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `dlog&#x2F;kimchi&#x2F;src&#x2F;index.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>index.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../kimchi/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `kimchi/src/index.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>index.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+    <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../kimchi/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../../kimchi/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../kimchi/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
 <span id="2">  2</span>
 <span id="3">  3</span>
 <span id="4">  4</span>
@@ -334,6 +339,41 @@
 <span id="334">334</span>
 <span id="335">335</span>
 <span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
+<span id="353">353</span>
+<span id="354">354</span>
+<span id="355">355</span>
+<span id="356">356</span>
+<span id="357">357</span>
+<span id="358">358</span>
+<span id="359">359</span>
+<span id="360">360</span>
+<span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
+<span id="366">366</span>
+<span id="367">367</span>
+<span id="368">368</span>
+<span id="369">369</span>
+<span id="370">370</span>
+<span id="371">371</span>
 </pre><pre class="rust"><code><span class="comment">/*****************************************************************************************************************
 
 This source file implements Plonk Protocol Index primitive.
@@ -347,21 +387,21 @@ This source file implements Plonk Protocol Index primitive.
     <span class="ident">sync::Arc</span>,
 };
 
+<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::circuits</span>::{
+    <span class="ident">constraints</span>::{<span class="ident">zk_polynomial</span>, <span class="ident">zk_w3</span>, <span class="ident">ConstraintSystem</span>},
+    <span class="ident">expr</span>::{<span class="ident">Column</span>, <span class="ident">Expr</span>, <span class="ident">Linearization</span>, <span class="ident">PolishToken</span>, <span class="ident">E</span>},
+    <span class="ident">gate</span>::{<span class="ident">GateType</span>, <span class="ident">LookupInfo</span>, <span class="ident">LookupsUsed</span>},
+    <span class="ident">polynomials</span>::{<span class="ident">chacha</span>, <span class="ident">complete_add</span>, <span class="ident">endomul_scalar</span>, <span class="ident">endosclmul</span>, <span class="ident">lookup</span>, <span class="ident">poseidon</span>, <span class="ident">varbasemul</span>},
+    <span class="ident">wires</span>::<span class="kw-2">*</span>,
+};
 <span class="kw">use</span> <span class="ident">ark_ec::AffineCurve</span>;
-<span class="kw">use</span> <span class="ident">ark_ff::PrimeField</span>;
+<span class="kw">use</span> <span class="ident">ark_ff</span>::{<span class="ident">FftField</span>, <span class="ident">PrimeField</span>, <span class="ident">SquareRootField</span>};
 <span class="kw">use</span> <span class="ident">ark_poly</span>::{<span class="ident">univariate::DensePolynomial</span>, <span class="ident">Radix2EvaluationDomain</span> <span class="kw">as</span> <span class="ident">D</span>};
 <span class="kw">use</span> <span class="ident">array_init::array_init</span>;
 <span class="kw">use</span> <span class="ident">commitment_dlog</span>::{
     <span class="ident">commitment</span>::{<span class="ident">CommitmentCurve</span>, <span class="ident">PolyComm</span>},
     <span class="ident">srs::SRS</span>,
     <span class="ident">CommitmentField</span>,
-};
-<span class="kw">use</span> <span class="ident">kimchi_circuits</span>::{
-    <span class="ident">expr</span>::{<span class="ident">Column</span>, <span class="ident">ConstantExpr</span>, <span class="ident">Expr</span>, <span class="ident">Linearization</span>, <span class="ident">PolishToken</span>},
-    <span class="ident">gate</span>::{<span class="ident">GateType</span>, <span class="ident">LookupInfo</span>, <span class="ident">LookupsUsed</span>},
-    <span class="ident">nolookup::constraints</span>::{<span class="ident">zk_polynomial</span>, <span class="ident">zk_w3</span>, <span class="ident">ConstraintSystem</span>},
-    <span class="ident">polynomials</span>::{<span class="ident">chacha</span>, <span class="ident">complete_add</span>, <span class="ident">endomul_scalar</span>, <span class="ident">endosclmul</span>, <span class="ident">lookup</span>, <span class="ident">poseidon</span>, <span class="ident">varbasemul</span>},
-    <span class="ident">wires</span>::<span class="kw-2">*</span>,
 };
 <span class="kw">use</span> <span class="ident">oracle::poseidon::ArithmeticSpongeParams</span>;
 <span class="kw">use</span> <span class="ident">serde</span>::{<span class="ident">de::DeserializeOwned</span>, <span class="ident">Deserialize</span>, <span class="ident">Serialize</span>};
@@ -480,6 +520,65 @@ This source file implements Plonk Protocol Index primitive.
     <span class="kw">pub</span> <span class="ident">fq_sponge_params</span>: <span class="ident">ArithmeticSpongeParams</span><span class="op">&lt;</span><span class="ident">Fq</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span>,
 }
 
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">constraints_expr</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">FftField</span> <span class="op">+</span> <span class="ident">SquareRootField</span><span class="op">&gt;</span>(
+    <span class="ident">domain</span>: <span class="ident">D</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span>,
+    <span class="ident">chacha</span>: <span class="ident">bool</span>,
+    <span class="ident">dummy_lookup_value</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span>[<span class="ident">F</span>]<span class="op">&gt;</span>,
+) -&gt; <span class="ident">E</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> {
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">poseidon::constraint</span>();
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">varbasemul::constraint</span>(<span class="ident"><span class="kw">super</span>::range::MUL</span>.<span class="ident">start</span>);
+    <span class="kw">let</span> (<span class="ident">alphas_used</span>, <span class="ident">complete_add</span>) <span class="op">=</span> <span class="ident">complete_add::constraint</span>(<span class="ident"><span class="kw">super</span>::range::COMPLETE_ADD</span>.<span class="ident">start</span>);
+    <span class="macro">assert_eq!</span>(<span class="ident">alphas_used</span>, <span class="ident"><span class="kw">super</span>::range::COMPLETE_ADD</span>.<span class="ident">len</span>());
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">complete_add</span>;
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">endosclmul::constraint</span>(<span class="number">2</span> <span class="op">+</span> <span class="ident"><span class="kw">super</span>::range::ENDML</span>.<span class="ident">start</span>);
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">endomul_scalar::constraint</span>(<span class="ident"><span class="kw">super</span>::range::ENDOMUL_SCALAR</span>.<span class="ident">start</span>);
+
+    <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">dummy</span>) <span class="op">=</span> <span class="ident">dummy_lookup_value</span> {
+        <span class="kw">let</span> <span class="ident">constraints</span> <span class="op">=</span> <span class="ident">lookup::constraints</span>(<span class="ident">dummy</span>, <span class="ident">domain</span>);
+        <span class="kw">let</span> <span class="ident">combined</span> <span class="op">=</span> <span class="ident">Expr::combine_constraints</span>(<span class="number">2</span> <span class="op">+</span> <span class="ident"><span class="kw">super</span>::range::CHACHA</span>.<span class="ident">end</span>, <span class="ident">constraints</span>);
+        <span class="ident">expr</span> <span class="op">+</span> <span class="ident">combined</span>
+    } <span class="kw">else</span> {
+        <span class="ident">expr</span>
+    };
+
+    <span class="kw">if</span> <span class="ident">chacha</span> {
+        <span class="ident">expr</span> <span class="op">+</span> <span class="ident">chacha::constraint</span>(<span class="ident"><span class="kw">super</span>::range::CHACHA</span>.<span class="ident">start</span>)
+    } <span class="kw">else</span> {
+        <span class="ident">expr</span>
+    }
+}
+
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">linearization_columns</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">FftField</span> <span class="op">+</span> <span class="ident">SquareRootField</span><span class="op">&gt;</span>() -&gt; <span class="ident">std::collections::HashSet</span><span class="op">&lt;</span><span class="ident">Column</span><span class="op">&gt;</span> {
+    <span class="kw">let</span> <span class="ident">lookup_info</span> <span class="op">=</span> <span class="ident">LookupInfo</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span><span class="ident">::create</span>();
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">h</span> <span class="op">=</span> <span class="ident">std::collections::HashSet::new</span>();
+    <span class="kw">use</span> <span class="ident">Column</span>::<span class="kw-2">*</span>;
+    <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..<span class="ident">COLUMNS</span> {
+        <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Witness</span>(<span class="ident">i</span>));
+    }
+    <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..(<span class="ident">lookup_info</span>.<span class="ident">max_per_row</span> <span class="op">+</span> <span class="number">1</span>) {
+        <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupSorted</span>(<span class="ident">i</span>));
+    }
+    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Z</span>);
+    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupAggreg</span>);
+    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupTable</span>);
+    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Index</span>(<span class="ident">GateType::Poseidon</span>));
+    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Index</span>(<span class="ident">GateType::Generic</span>));
+    <span class="ident">h</span>
+}
+
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">expr_linearization</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">FftField</span> <span class="op">+</span> <span class="ident">SquareRootField</span><span class="op">&gt;</span>(
+    <span class="ident">domain</span>: <span class="ident">D</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span>,
+    <span class="ident">chacha</span>: <span class="ident">bool</span>,
+    <span class="ident">dummy_lookup_value</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span>[<span class="ident">F</span>]<span class="op">&gt;</span>,
+) -&gt; <span class="ident">Linearization</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">PolishToken</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> {
+    <span class="kw">let</span> <span class="ident">evaluated_cols</span> <span class="op">=</span> <span class="ident">linearization_columns</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span>();
+
+    <span class="ident">constraints_expr</span>(<span class="ident">domain</span>, <span class="ident">chacha</span>, <span class="ident">dummy_lookup_value</span>)
+        .<span class="ident">linearize</span>(<span class="ident">evaluated_cols</span>)
+        .<span class="ident">unwrap</span>()
+        .<span class="ident">map</span>(<span class="op">|</span><span class="ident">e</span><span class="op">|</span> <span class="ident">e</span>.<span class="ident">to_polish</span>())
+}
+
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">G</span>: <span class="ident">CommitmentCurve</span><span class="op">&gt;</span> <span class="ident">Index</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>
 <span class="kw">where</span>
     <span class="ident">G::BaseField</span>: <span class="ident">PrimeField</span>,
@@ -494,14 +593,23 @@ This source file implements Plonk Protocol Index primitive.
             <span class="ident">sigma_comm</span>: <span class="ident">array_init</span>(<span class="op">|</span><span class="ident">i</span><span class="op">|</span> <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">sigmam</span>[<span class="ident">i</span>], <span class="prelude-val">None</span>)),
             <span class="ident">generic_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">genericm</span>, <span class="prelude-val">None</span>),
             <span class="ident">coefficients_comm</span>: <span class="ident">array_init</span>(<span class="op">|</span><span class="ident">i</span><span class="op">|</span> {
-                <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">coefficientsm</span>[<span class="ident">i</span>], <span class="prelude-val">None</span>)
+                <span class="self">self</span>.<span class="ident">srs</span>
+                    .<span class="ident">commit_evaluations_non_hiding</span>(<span class="ident">domain</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">coefficients8</span>[<span class="ident">i</span>], <span class="prelude-val">None</span>)
             }),
 
             <span class="ident">psm_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">psm</span>, <span class="prelude-val">None</span>),
 
-            <span class="ident">complete_add_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">complete_addm</span>, <span class="prelude-val">None</span>),
-            <span class="ident">mul_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">mulm</span>, <span class="prelude-val">None</span>),
-            <span class="ident">emul_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_non_hiding</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">emulm</span>, <span class="prelude-val">None</span>),
+            <span class="ident">complete_add_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_evaluations_non_hiding</span>(
+                <span class="ident">domain</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">complete_addl4</span>,
+                <span class="prelude-val">None</span>,
+            ),
+            <span class="ident">mul_comm</span>: <span class="self">self</span>
+                .<span class="ident">srs</span>
+                .<span class="ident">commit_evaluations_non_hiding</span>(<span class="ident">domain</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">mull8</span>, <span class="prelude-val">None</span>),
+            <span class="ident">emul_comm</span>: <span class="self">self</span>
+                .<span class="ident">srs</span>
+                .<span class="ident">commit_evaluations_non_hiding</span>(<span class="ident">domain</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cs</span>.<span class="ident">emull</span>, <span class="prelude-val">None</span>),
 
             <span class="ident">endomul_scalar_comm</span>: <span class="self">self</span>.<span class="ident">srs</span>.<span class="ident">commit_evaluations_non_hiding</span>(
                 <span class="ident">domain</span>,
@@ -561,58 +669,25 @@ This source file implements Plonk Protocol Index primitive.
         <span class="kw">let</span> <span class="ident">lookup_info</span> <span class="op">=</span> <span class="ident">LookupInfo</span>::<span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::create</span>();
         <span class="kw">let</span> <span class="ident">lookup_used</span> <span class="op">=</span> <span class="ident">lookup_info</span>.<span class="ident">lookup_used</span>(<span class="kw-2">&amp;</span><span class="ident">cs</span>.<span class="ident">gates</span>);
 
-        <span class="kw">let</span> <span class="ident">linearization</span>: <span class="ident">Linearization</span><span class="op">&lt;</span><span class="ident">Expr</span><span class="op">&lt;</span><span class="ident">ConstantExpr</span><span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> {
-            <span class="kw">let</span> <span class="ident">evaluated_cols</span> <span class="op">=</span> {
-                <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">h</span> <span class="op">=</span> <span class="ident">std::collections::HashSet::new</span>();
-                <span class="kw">use</span> <span class="ident">Column</span>::<span class="kw-2">*</span>;
-                <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..<span class="ident">COLUMNS</span> {
-                    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Witness</span>(<span class="ident">i</span>));
-                }
-                <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..(<span class="ident">lookup_info</span>.<span class="ident">max_per_row</span> <span class="op">+</span> <span class="number">1</span>) {
-                    <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupSorted</span>(<span class="ident">i</span>));
-                }
-                <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Z</span>);
-                <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupAggreg</span>);
-                <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">LookupTable</span>);
-                <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Index</span>(<span class="ident">GateType::Poseidon</span>));
-                <span class="ident">h</span>.<span class="ident">insert</span>(<span class="ident">Index</span>(<span class="ident">GateType::Generic</span>));
-                <span class="ident">h</span>
-            };
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">poseidon::constraint</span>();
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">varbasemul::constraint</span>(<span class="ident"><span class="kw">super</span>::range::MUL</span>.<span class="ident">start</span>);
-            <span class="kw">let</span> (<span class="ident">alphas_used</span>, <span class="ident">complete_add</span>) <span class="op">=</span>
-                <span class="ident">complete_add::constraint</span>(<span class="ident"><span class="kw">super</span>::range::COMPLETE_ADD</span>.<span class="ident">start</span>);
-            <span class="macro">assert_eq!</span>(<span class="ident">alphas_used</span>, <span class="ident"><span class="kw">super</span>::range::COMPLETE_ADD</span>.<span class="ident">len</span>());
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">complete_add</span>;
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">endosclmul::constraint</span>(<span class="number">2</span> <span class="op">+</span> <span class="ident"><span class="kw">super</span>::range::ENDML</span>.<span class="ident">start</span>);
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="ident">expr</span> <span class="op">+</span> <span class="ident">endomul_scalar::constraint</span>(<span class="ident"><span class="kw">super</span>::range::ENDOMUL_SCALAR</span>.<span class="ident">start</span>);
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">lookup_used</span>.<span class="ident">is_some</span>() {
-                <span class="ident">expr</span> <span class="op">+</span> <span class="ident">Expr::combine_constraints</span>(
-                    <span class="number">2</span> <span class="op">+</span> <span class="ident"><span class="kw">super</span>::range::CHACHA</span>.<span class="ident">end</span>,
-                    <span class="ident">lookup::constraints</span>(<span class="kw-2">&amp;</span><span class="ident">cs</span>.<span class="ident">dummy_lookup_values</span>[<span class="number">0</span>], <span class="ident">cs</span>.<span class="ident">domain</span>.<span class="ident">d1</span>),
-                )
-            } <span class="kw">else</span> {
-                <span class="ident">expr</span>
-            };
-            <span class="kw">let</span> <span class="ident">expr</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">cs</span>.<span class="ident">chacha8</span>.<span class="ident">is_some</span>() {
-                <span class="ident">expr</span> <span class="op">+</span> <span class="ident">chacha::constraint</span>(<span class="ident"><span class="kw">super</span>::range::CHACHA</span>.<span class="ident">start</span>)
-            } <span class="kw">else</span> {
-                <span class="ident">expr</span>
-            };
-
-            <span class="ident">expr</span>.<span class="ident">linearize</span>(<span class="ident">evaluated_cols</span>).<span class="ident">unwrap</span>()
+        <span class="kw">let</span> <span class="ident">dummy_lookup_value</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">lookup_used</span>.<span class="ident">is_some</span>() {
+            <span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">cs</span>.<span class="ident">dummy_lookup_values</span>[<span class="number">0</span>][..])
+        } <span class="kw">else</span> {
+            <span class="prelude-val">None</span>
         };
+
+        <span class="kw">let</span> <span class="ident">linearization</span> <span class="op">=</span>
+            <span class="ident">expr_linearization</span>(<span class="ident">cs</span>.<span class="ident">domain</span>.<span class="ident">d1</span>, <span class="ident">cs</span>.<span class="ident">chacha8</span>.<span class="ident">is_some</span>(), <span class="ident">dummy_lookup_value</span>);
 
         <span class="ident">Index</span> {
             <span class="comment">// TODO(mimoo): re-order field like in the type def</span>
             <span class="comment">// max_quot_size: PlonkSpongeConstants::SPONGE_BOX * (pcs.cs.domain.d1.size as usize - 1),</span>
-            <span class="ident">max_quot_size</span>: <span class="ident">cs</span>.<span class="ident">domain</span>.<span class="ident">d8</span>.<span class="ident">size</span> <span class="kw">as</span> <span class="ident">usize</span> <span class="op">-</span> <span class="number">7</span>,
+            <span class="ident">max_quot_size</span>: <span class="ident">PERMUTS</span> <span class="op">*</span> <span class="ident">cs</span>.<span class="ident">domain</span>.<span class="ident">d1</span>.<span class="ident">size</span> <span class="kw">as</span> <span class="ident">usize</span>,
             <span class="ident">fq_sponge_params</span>,
             <span class="ident">max_poly_size</span>,
             <span class="ident">srs</span>,
             <span class="ident">cs</span>,
             <span class="ident">lookup_used</span>,
-            <span class="ident">linearization</span>: <span class="ident">linearization</span>.<span class="ident">map</span>(<span class="op">|</span><span class="ident">e</span><span class="op">|</span> <span class="ident">e</span>.<span class="ident">to_polish</span>()),
+            <span class="ident">linearization</span>,
         }
     }
 }
@@ -671,6 +746,5 @@ This source file implements Plonk Protocol Index primitive.
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="kimchi" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
-    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="kimchi" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (51126be1b 2022-01-24)" ></div>
 </body></html>

@@ -1,4 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `dlog&#x2F;commitment&#x2F;src&#x2F;commitment.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>commitment.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../commitment_dlog/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `poly-commitment/src/commitment.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>commitment.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+    <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../commitment_dlog/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../../commitment_dlog/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../commitment_dlog/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
 <span id="4">   4</span>
@@ -1284,6 +1289,142 @@
 <span id="1284">1284</span>
 <span id="1285">1285</span>
 <span id="1286">1286</span>
+<span id="1287">1287</span>
+<span id="1288">1288</span>
+<span id="1289">1289</span>
+<span id="1290">1290</span>
+<span id="1291">1291</span>
+<span id="1292">1292</span>
+<span id="1293">1293</span>
+<span id="1294">1294</span>
+<span id="1295">1295</span>
+<span id="1296">1296</span>
+<span id="1297">1297</span>
+<span id="1298">1298</span>
+<span id="1299">1299</span>
+<span id="1300">1300</span>
+<span id="1301">1301</span>
+<span id="1302">1302</span>
+<span id="1303">1303</span>
+<span id="1304">1304</span>
+<span id="1305">1305</span>
+<span id="1306">1306</span>
+<span id="1307">1307</span>
+<span id="1308">1308</span>
+<span id="1309">1309</span>
+<span id="1310">1310</span>
+<span id="1311">1311</span>
+<span id="1312">1312</span>
+<span id="1313">1313</span>
+<span id="1314">1314</span>
+<span id="1315">1315</span>
+<span id="1316">1316</span>
+<span id="1317">1317</span>
+<span id="1318">1318</span>
+<span id="1319">1319</span>
+<span id="1320">1320</span>
+<span id="1321">1321</span>
+<span id="1322">1322</span>
+<span id="1323">1323</span>
+<span id="1324">1324</span>
+<span id="1325">1325</span>
+<span id="1326">1326</span>
+<span id="1327">1327</span>
+<span id="1328">1328</span>
+<span id="1329">1329</span>
+<span id="1330">1330</span>
+<span id="1331">1331</span>
+<span id="1332">1332</span>
+<span id="1333">1333</span>
+<span id="1334">1334</span>
+<span id="1335">1335</span>
+<span id="1336">1336</span>
+<span id="1337">1337</span>
+<span id="1338">1338</span>
+<span id="1339">1339</span>
+<span id="1340">1340</span>
+<span id="1341">1341</span>
+<span id="1342">1342</span>
+<span id="1343">1343</span>
+<span id="1344">1344</span>
+<span id="1345">1345</span>
+<span id="1346">1346</span>
+<span id="1347">1347</span>
+<span id="1348">1348</span>
+<span id="1349">1349</span>
+<span id="1350">1350</span>
+<span id="1351">1351</span>
+<span id="1352">1352</span>
+<span id="1353">1353</span>
+<span id="1354">1354</span>
+<span id="1355">1355</span>
+<span id="1356">1356</span>
+<span id="1357">1357</span>
+<span id="1358">1358</span>
+<span id="1359">1359</span>
+<span id="1360">1360</span>
+<span id="1361">1361</span>
+<span id="1362">1362</span>
+<span id="1363">1363</span>
+<span id="1364">1364</span>
+<span id="1365">1365</span>
+<span id="1366">1366</span>
+<span id="1367">1367</span>
+<span id="1368">1368</span>
+<span id="1369">1369</span>
+<span id="1370">1370</span>
+<span id="1371">1371</span>
+<span id="1372">1372</span>
+<span id="1373">1373</span>
+<span id="1374">1374</span>
+<span id="1375">1375</span>
+<span id="1376">1376</span>
+<span id="1377">1377</span>
+<span id="1378">1378</span>
+<span id="1379">1379</span>
+<span id="1380">1380</span>
+<span id="1381">1381</span>
+<span id="1382">1382</span>
+<span id="1383">1383</span>
+<span id="1384">1384</span>
+<span id="1385">1385</span>
+<span id="1386">1386</span>
+<span id="1387">1387</span>
+<span id="1388">1388</span>
+<span id="1389">1389</span>
+<span id="1390">1390</span>
+<span id="1391">1391</span>
+<span id="1392">1392</span>
+<span id="1393">1393</span>
+<span id="1394">1394</span>
+<span id="1395">1395</span>
+<span id="1396">1396</span>
+<span id="1397">1397</span>
+<span id="1398">1398</span>
+<span id="1399">1399</span>
+<span id="1400">1400</span>
+<span id="1401">1401</span>
+<span id="1402">1402</span>
+<span id="1403">1403</span>
+<span id="1404">1404</span>
+<span id="1405">1405</span>
+<span id="1406">1406</span>
+<span id="1407">1407</span>
+<span id="1408">1408</span>
+<span id="1409">1409</span>
+<span id="1410">1410</span>
+<span id="1411">1411</span>
+<span id="1412">1412</span>
+<span id="1413">1413</span>
+<span id="1414">1414</span>
+<span id="1415">1415</span>
+<span id="1416">1416</span>
+<span id="1417">1417</span>
+<span id="1418">1418</span>
+<span id="1419">1419</span>
+<span id="1420">1420</span>
+<span id="1421">1421</span>
+<span id="1422">1422</span>
 </pre><pre class="rust"><code><span class="comment">/*****************************************************************************************************************
 
 This source file implements Dlog-based polynomial commitment schema.
@@ -1302,7 +1443,9 @@ The folowing functionality is implemented
     <span class="ident">models::short_weierstrass_jacobian::GroupAffine</span> <span class="kw">as</span> <span class="ident">SWJAffine</span>, <span class="ident">msm::VariableBaseMSM</span>,
     <span class="ident">AffineCurve</span>, <span class="ident">ProjectiveCurve</span>, <span class="ident">SWModelParameters</span>,
 };
-<span class="kw">use</span> <span class="ident">ark_ff</span>::{<span class="ident">Field</span>, <span class="ident">FpParameters</span>, <span class="ident">One</span>, <span class="ident">PrimeField</span>, <span class="ident">SquareRootField</span>, <span class="ident">UniformRand</span>, <span class="ident">Zero</span>};
+<span class="kw">use</span> <span class="ident">ark_ff</span>::{
+    <span class="ident">BigInteger</span>, <span class="ident">Field</span>, <span class="ident">FpParameters</span>, <span class="ident">One</span>, <span class="ident">PrimeField</span>, <span class="ident">SquareRootField</span>, <span class="ident">UniformRand</span>, <span class="ident">Zero</span>,
+};
 <span class="kw">use</span> <span class="ident">ark_poly</span>::{
     <span class="ident">univariate::DensePolynomial</span>, <span class="ident">EvaluationDomain</span>, <span class="ident">Evaluations</span>, <span class="ident">Radix2EvaluationDomain</span> <span class="kw">as</span> <span class="ident">D</span>,
     <span class="ident">UVPolynomial</span>,
@@ -1361,9 +1504,51 @@ The folowing functionality is implemented
     }
 }
 
-<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">shift_scalar</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">PrimeField</span><span class="op">&gt;</span>(<span class="ident">x</span>: <span class="ident">F</span>) -&gt; <span class="ident">F</span> {
-    <span class="kw">let</span> <span class="ident">two</span>: <span class="ident">F</span> <span class="op">=</span> <span class="number">2_u64</span>.<span class="ident">into</span>();
-    <span class="ident">x</span> <span class="op">-</span> <span class="ident">two</span>.<span class="ident">pow</span>(<span class="kw-2">&amp;</span>[<span class="ident">F::Params::MODULUS_BITS</span> <span class="kw">as</span> <span class="ident">u64</span>])
+<span class="doccomment">/// Inside the circuit, we have a specialized scalar multiplication which computes</span>
+<span class="doccomment">/// either</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// ```ignore</span>
+<span class="doccomment">/// |g: G, x: G::ScalarField| g.scale(x + 2^n)</span>
+<span class="doccomment">/// ```</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// if the scalar field of G is greater than the size of the base field</span>
+<span class="doccomment">/// and</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// ```ignore</span>
+<span class="doccomment">/// |g: G, x: G::ScalarField| g.scale(2*x + 2^n)</span>
+<span class="doccomment">/// ```</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// otherwise. So, if we want to actually scale by `s`, we need to apply the inverse function</span>
+<span class="doccomment">/// of `|x| x + 2^n` (or of `|x| 2*x + 2^n` in the other case), before supplying the scalar</span>
+<span class="doccomment">/// to our in-circuit scalar-multiplication function. This computes that inverse function.</span>
+<span class="doccomment">/// Namely,</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// ```ignore</span>
+<span class="doccomment">/// |x: G::ScalarField| x - 2^n</span>
+<span class="doccomment">/// ```</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// when the scalar field is larger than the base field and</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// ```ignore</span>
+<span class="doccomment">/// |x: G::ScalarField| (x - 2^n) / 2</span>
+<span class="doccomment">/// ```</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// in the other case.</span>
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">shift_scalar</span><span class="op">&lt;</span><span class="ident">G</span>: <span class="ident">AffineCurve</span><span class="op">&gt;</span>(<span class="ident">x</span>: <span class="ident">G::ScalarField</span>) -&gt; <span class="ident">G::ScalarField</span>
+<span class="kw">where</span>
+    <span class="ident">G::BaseField</span>: <span class="ident">PrimeField</span>,
+{
+    <span class="kw">let</span> <span class="ident">n1</span> <span class="op">=</span> <span class="op">&lt;</span><span class="ident">G::ScalarField</span> <span class="kw">as</span> <span class="ident">PrimeField</span><span class="op">&gt;</span><span class="ident">::Params::MODULUS</span>;
+    <span class="kw">let</span> <span class="ident">n2</span> <span class="op">=</span> <span class="op">&lt;</span><span class="ident">G::ScalarField</span> <span class="kw">as</span> <span class="ident">PrimeField</span><span class="op">&gt;</span><span class="ident">::BigInt::from_bits_le</span>(
+        <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident">G::BaseField</span> <span class="kw">as</span> <span class="ident">PrimeField</span><span class="op">&gt;</span><span class="ident">::Params::MODULUS</span>.<span class="ident">to_bits_le</span>()[..],
+    );
+    <span class="kw">let</span> <span class="ident">two</span>: <span class="ident">G::ScalarField</span> <span class="op">=</span> (<span class="number">2u64</span>).<span class="ident">into</span>();
+    <span class="kw">let</span> <span class="ident">two_pow</span> <span class="op">=</span> <span class="ident">two</span>.<span class="ident">pow</span>(<span class="kw-2">&amp;</span>[<span class="op">&lt;</span><span class="ident">G::ScalarField</span> <span class="kw">as</span> <span class="ident">PrimeField</span><span class="op">&gt;</span><span class="ident">::Params::MODULUS_BITS</span> <span class="kw">as</span> <span class="ident">u64</span>]);
+    <span class="kw">if</span> <span class="ident">n1</span> <span class="op">&lt;</span> <span class="ident">n2</span> {
+        (<span class="ident">x</span> <span class="op">-</span> (<span class="ident">two_pow</span> <span class="op">+</span> <span class="ident">G::ScalarField::one</span>())) <span class="op">/</span> <span class="ident">two</span>
+    } <span class="kw">else</span> {
+        <span class="ident">x</span> <span class="op">-</span> <span class="ident">two_pow</span>
+    }
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>, <span class="ident">C</span>: <span class="ident">AffineCurve</span><span class="op">&gt;</span> <span class="ident">Add</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">PolyComm</span><span class="op">&lt;</span><span class="ident">C</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;b</span> <span class="ident">PolyComm</span><span class="op">&lt;</span><span class="ident">C</span><span class="op">&gt;</span> {
@@ -1624,6 +1809,17 @@ The folowing functionality is implemented
         <span class="ident"><span class="kw">crate</span>::combine::window_combine</span>(<span class="ident">g1</span>, <span class="ident">g2</span>, <span class="ident"><span class="self">Self</span>::ScalarField::one</span>(), <span class="ident">x2</span>)
     }
 
+    <span class="comment">// Combine where x1 = one</span>
+    <span class="kw">fn</span> <span class="ident">combine_one_endo</span>(
+        <span class="ident">endo_r</span>: <span class="ident"><span class="self">Self</span>::ScalarField</span>,
+        <span class="ident">_endo_q</span>: <span class="ident"><span class="self">Self</span>::BaseField</span>,
+        <span class="ident">g1</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
+        <span class="ident">g2</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
+        <span class="ident">x2</span>: <span class="ident">ScalarChallenge</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::ScalarField</span><span class="op">&gt;</span>,
+    ) -&gt; <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="ident"><span class="kw">crate</span>::combine::window_combine</span>(<span class="ident">g1</span>, <span class="ident">g2</span>, <span class="ident"><span class="self">Self</span>::ScalarField::one</span>(), <span class="ident">x2</span>.<span class="ident">to_field</span>(<span class="kw-2">&amp;</span><span class="ident">endo_r</span>))
+    }
+
     <span class="kw">fn</span> <span class="ident">combine</span>(
         <span class="ident">g1</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
         <span class="ident">g2</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
@@ -1655,6 +1851,16 @@ The folowing functionality is implemented
 
     <span class="kw">fn</span> <span class="ident">combine_one</span>(<span class="ident">g1</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>], <span class="ident">g2</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>], <span class="ident">x2</span>: <span class="ident"><span class="self">Self</span>::ScalarField</span>) -&gt; <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="ident"><span class="kw">crate</span>::combine::affine_window_combine_one</span>(<span class="ident">g1</span>, <span class="ident">g2</span>, <span class="ident">x2</span>)
+    }
+
+    <span class="kw">fn</span> <span class="ident">combine_one_endo</span>(
+        <span class="ident">_endo_r</span>: <span class="ident"><span class="self">Self</span>::ScalarField</span>,
+        <span class="ident">endo_q</span>: <span class="ident"><span class="self">Self</span>::BaseField</span>,
+        <span class="ident">g1</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
+        <span class="ident">g2</span>: <span class="kw-2">&amp;</span>[<span class="self">Self</span>],
+        <span class="ident">x2</span>: <span class="ident">ScalarChallenge</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::ScalarField</span><span class="op">&gt;</span>,
+    ) -&gt; <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="ident"><span class="kw">crate</span>::combine::affine_window_combine_one_endo</span>(<span class="ident">endo_q</span>, <span class="ident">g1</span>, <span class="ident">g2</span>, <span class="ident">x2</span>)
     }
 
     <span class="kw">fn</span> <span class="ident">combine</span>(
@@ -1723,6 +1929,65 @@ The folowing functionality is implemented
     <span class="ident">res</span>
 }
 
+<span class="kw">enum</span> <span class="ident">OptShiftedPolynomial</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> {
+    <span class="ident">Unshifted</span>(<span class="ident">P</span>),
+    <span class="ident">Shifted</span>(<span class="ident">P</span>, <span class="ident">usize</span>),
+}
+
+<span class="doccomment">/// A formal sum of the form</span>
+<span class="doccomment">/// `s_0 * p_0 + ... s_n * p_n`</span>
+<span class="doccomment">/// where each `s_i` is a scalar and each `p_i` is an optionally shifted polynomial.</span>
+<span class="kw">struct</span> <span class="ident">ChunkedPolynomial</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span>(<span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">F</span>, <span class="ident">OptShiftedPolynomial</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span>)<span class="op">&gt;</span>);
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">ChunkedPolynomial</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">ChunkedPolynomial</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span> {
+        <span class="ident">ChunkedPolynomial</span>(<span class="macro">vec!</span>[])
+    }
+}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span> <span class="ident">ChunkedPolynomial</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="ident">P</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">add_unshifted</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">scale</span>: <span class="ident">F</span>, <span class="ident">p</span>: <span class="ident">P</span>) {
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">push</span>((<span class="ident">scale</span>, <span class="ident">OptShiftedPolynomial::Unshifted</span>(<span class="ident">p</span>)))
+    }
+
+    <span class="kw">fn</span> <span class="ident">add_shifted</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">scale</span>: <span class="ident">F</span>, <span class="ident">shift</span>: <span class="ident">usize</span>, <span class="ident">p</span>: <span class="ident">P</span>) {
+        <span class="self">self</span>.<span class="number">0</span>
+            .<span class="ident">push</span>((<span class="ident">scale</span>, <span class="ident">OptShiftedPolynomial::Shifted</span>(<span class="ident">p</span>, <span class="ident">shift</span>)))
+    }
+}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">F</span>: <span class="ident">Field</span><span class="op">&gt;</span> <span class="ident">ChunkedPolynomial</span><span class="op">&lt;</span><span class="ident">F</span>, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> [<span class="ident">F</span>]<span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">to_dense_polynomial</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">DensePolynomial</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">res</span> <span class="op">=</span> <span class="ident">DensePolynomial</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span><span class="ident">::zero</span>();
+
+        <span class="kw">let</span> <span class="ident">scaled</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="kw">_</span><span class="op">&gt;</span> <span class="op">=</span> <span class="self">self</span>
+            .<span class="number">0</span>
+            .<span class="ident">par_iter</span>()
+            .<span class="ident">map</span>(<span class="op">|</span>(<span class="ident">scale</span>, <span class="ident">segment</span>)<span class="op">|</span> {
+                <span class="kw">let</span> <span class="ident">scale</span> <span class="op">=</span> <span class="kw-2">*</span><span class="ident">scale</span>;
+                <span class="kw">match</span> <span class="ident">segment</span> {
+                    <span class="ident">OptShiftedPolynomial::Unshifted</span>(<span class="ident">segment</span>) =&gt; {
+                        <span class="kw">let</span> <span class="ident">v</span> <span class="op">=</span> <span class="ident">segment</span>.<span class="ident">par_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">x</span><span class="op">|</span> <span class="ident">scale</span> <span class="op">*</span> <span class="kw-2">*</span><span class="ident">x</span>).<span class="ident">collect</span>();
+                        <span class="ident">DensePolynomial::from_coefficients_vec</span>(<span class="ident">v</span>)
+                    }
+                    <span class="ident">OptShiftedPolynomial::Shifted</span>(<span class="ident">segment</span>, <span class="ident">shift</span>) =&gt; {
+                        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">v</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="kw">_</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">segment</span>.<span class="ident">par_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">x</span><span class="op">|</span> <span class="ident">scale</span> <span class="op">*</span> <span class="kw-2">*</span><span class="ident">x</span>).<span class="ident">collect</span>();
+                        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">res</span> <span class="op">=</span> <span class="macro">vec!</span>[<span class="ident">F::zero</span>(); <span class="kw-2">*</span><span class="ident">shift</span>];
+                        <span class="ident">res</span>.<span class="ident">append</span>(<span class="kw-2">&amp;mut</span> <span class="ident">v</span>);
+                        <span class="ident">DensePolynomial::from_coefficients_vec</span>(<span class="ident">res</span>)
+                    }
+                }
+            })
+            .<span class="ident">collect</span>();
+
+        <span class="kw">for</span> <span class="ident">p</span> <span class="kw">in</span> <span class="ident">scaled</span> {
+            <span class="ident">res</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">p</span>;
+        }
+
+        <span class="ident">res</span>
+    }
+}
+
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">G</span>: <span class="ident">CommitmentCurve</span><span class="op">&gt;</span> <span class="ident">SRS</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>
 <span class="kw">where</span>
     <span class="ident">G::ScalarField</span>: <span class="ident">CommitmentField</span>,
@@ -1769,16 +2034,20 @@ The folowing functionality is implemented
         <span class="ident">plnm</span>: <span class="kw-2">&amp;</span><span class="ident">DensePolynomial</span><span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span>,
         <span class="ident">max</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span>,
     ) -&gt; <span class="ident">PolyComm</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span> {
-        <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">plnm</span>.<span class="ident">coeffs</span>[..], <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g</span>[..], <span class="ident">plnm</span>.<span class="ident">is_zero</span>(), <span class="ident">max</span>)
+        <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">plnm</span>.<span class="ident">coeffs</span>[..], <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g</span>[..], <span class="prelude-val">None</span>, <span class="ident">plnm</span>.<span class="ident">is_zero</span>(), <span class="ident">max</span>)
     }
 
-    <span class="kw">fn</span> <span class="ident">commit_helper</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">commit_helper</span>(
         <span class="ident">scalars</span>: <span class="kw-2">&amp;</span>[<span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>],
         <span class="ident">basis</span>: <span class="kw-2">&amp;</span>[<span class="ident">G</span>],
+        <span class="ident">n</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span>,
         <span class="ident">is_zero</span>: <span class="ident">bool</span>,
         <span class="ident">max</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span>,
     ) -&gt; <span class="ident">PolyComm</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span> {
-        <span class="kw">let</span> <span class="ident">n</span> <span class="op">=</span> <span class="ident">basis</span>.<span class="ident">len</span>();
+        <span class="kw">let</span> <span class="ident">n</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">n</span> {
+            <span class="prelude-val">Some</span>(<span class="ident">n</span>) =&gt; <span class="ident">n</span>,
+            <span class="prelude-val">None</span> =&gt; <span class="ident">basis</span>.<span class="ident">len</span>(),
+        };
         <span class="kw">let</span> <span class="ident">p</span> <span class="op">=</span> <span class="ident">scalars</span>.<span class="ident">len</span>();
 
         <span class="comment">// committing all the segments without shifting</span>
@@ -1843,9 +2112,11 @@ The folowing functionality is implemented
                 <span class="kw">let</span> <span class="ident">v</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="kw">_</span><span class="op">&gt;</span> <span class="op">=</span> (<span class="number">0</span>..(<span class="ident">domain</span>.<span class="ident">size</span> <span class="kw">as</span> <span class="ident">usize</span>))
                     .<span class="ident">map</span>(<span class="op">|</span><span class="ident">i</span><span class="op">|</span> <span class="ident">plnm</span>.<span class="ident">evals</span>[<span class="ident">s</span> <span class="op">*</span> <span class="ident">i</span>])
                     .<span class="ident">collect</span>();
-                <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">v</span>[..], <span class="ident">basis</span>, <span class="ident">is_zero</span>, <span class="ident">max</span>)
+                <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">v</span>[..], <span class="ident">basis</span>, <span class="prelude-val">None</span>, <span class="ident">is_zero</span>, <span class="ident">max</span>)
             }
-            <span class="ident">std::cmp::Ordering::Equal</span> =&gt; <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">plnm</span>.<span class="ident">evals</span>[..], <span class="ident">basis</span>, <span class="ident">is_zero</span>, <span class="ident">max</span>),
+            <span class="ident">std::cmp::Ordering::Equal</span> =&gt; {
+                <span class="ident"><span class="self">Self</span>::commit_helper</span>(<span class="kw-2">&amp;</span><span class="ident">plnm</span>.<span class="ident">evals</span>[..], <span class="ident">basis</span>, <span class="prelude-val">None</span>, <span class="ident">is_zero</span>, <span class="ident">max</span>)
+            }
             <span class="ident">std::cmp::Ordering::Greater</span> =&gt; {
                 <span class="macro">panic!</span>(<span class="string">&quot;desired commitment domain size greater than evaluations&#39; domain size&quot;</span>)
             }
@@ -1886,6 +2157,7 @@ The folowing functionality is implemented
     <span class="kw">where</span>
         <span class="ident">EFqSponge</span>: <span class="ident">Clone</span> <span class="op">+</span> <span class="ident">FqSponge</span><span class="op">&lt;</span><span class="ident">Fq</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>, <span class="ident">G</span>, <span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span>,
         <span class="ident">RNG</span>: <span class="ident">RngCore</span> <span class="op">+</span> <span class="ident">CryptoRng</span>,
+        <span class="ident">G::BaseField</span>: <span class="ident">PrimeField</span>,
     {
         <span class="kw">let</span> <span class="ident">rounds</span> <span class="op">=</span> <span class="ident">ceil_log2</span>(<span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>());
         <span class="kw">let</span> <span class="ident">padded_length</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;</span><span class="op">&lt;</span> <span class="ident">rounds</span>;
@@ -1895,9 +2167,9 @@ The folowing functionality is implemented
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">g</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">clone</span>();
         <span class="ident">g</span>.<span class="ident">extend</span>(<span class="macro">vec!</span>[<span class="ident">G::zero</span>(); <span class="ident">padding</span>]);
 
-        <span class="comment">// scale the polynoms in accumulator shifted, if bounded, to the end of SRS</span>
         <span class="kw">let</span> (<span class="ident">p</span>, <span class="ident">blinding_factor</span>) <span class="op">=</span> {
-            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">p</span> <span class="op">=</span> <span class="ident">DensePolynomial</span>::<span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::zero</span>();
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">plnm</span> <span class="op">=</span> <span class="ident">ChunkedPolynomial</span>::<span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>, <span class="kw-2">&amp;</span>[<span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>]<span class="op">&gt;</span><span class="ident">::default</span>();
+            <span class="comment">// let mut plnm_chunks: Vec&lt;(Fr&lt;G&gt;, OptShiftedPolynomial&lt;_&gt;)&gt; = vec![];</span>
 
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">omega</span> <span class="op">=</span> <span class="ident">Fr</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="ident">::zero</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">scale</span> <span class="op">=</span> <span class="ident">Fr</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="ident">::one</span>();
@@ -1909,39 +2181,39 @@ The folowing functionality is implemented
                 <span class="comment">// iterating over chunks of the polynomial</span>
                 <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">m</span>) <span class="op">=</span> <span class="ident">degree_bound</span> {
                     <span class="macro">assert!</span>(<span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() <span class="op">&lt;</span><span class="op">=</span> <span class="ident">m</span> <span class="op">+</span> <span class="number">1</span>);
-                    <span class="kw">while</span> <span class="ident">offset</span> <span class="op">&lt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
-                        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="ident">DensePolynomial</span>::<span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::from_coefficients_slice</span>(
-                            <span class="kw-2">&amp;</span><span class="ident">p_i</span>.<span class="ident">coeffs</span>[<span class="ident">offset</span>..<span class="kw">if</span> <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">&gt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
+                    <span class="kw">while</span> <span class="ident">j</span> <span class="op">&lt;</span> <span class="ident">omegas</span>.<span class="ident">unshifted</span>.<span class="ident">len</span>() {
+                        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">p_i</span>.<span class="ident">coeffs</span>[<span class="ident">offset</span>
+                            ..<span class="kw">if</span> <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">&gt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
                                 <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>()
                             } <span class="kw">else</span> {
                                 <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>()
-                            }],
-                        );
+                            }];
                         <span class="comment">// always mixing in the unshifted segments</span>
-                        <span class="ident">p</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">scale</span>(<span class="ident">scale</span>);
+                        <span class="ident">plnm</span>.<span class="ident">add_unshifted</span>(<span class="ident">scale</span>, <span class="ident">segment</span>);
+
                         <span class="ident">omega</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span>(<span class="ident">omegas</span>.<span class="ident">unshifted</span>[<span class="ident">j</span>] <span class="op">*</span> <span class="ident">scale</span>);
                         <span class="ident">j</span> <span class="op">+</span><span class="op">=</span> <span class="number">1</span>;
                         <span class="ident">scale</span> <span class="kw-2">*</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">polyscale</span>;
                         <span class="ident">offset</span> <span class="op">+</span><span class="op">=</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>();
                         <span class="kw">if</span> <span class="ident">offset</span> <span class="op">&gt;</span> <span class="kw-2">*</span><span class="ident">m</span> {
                             <span class="comment">// mixing in the shifted segment since degree is bounded</span>
-                            <span class="ident">p</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span>(<span class="ident">segment</span>.<span class="ident">shiftr</span>(<span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">-</span> <span class="ident">m</span> <span class="op">%</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>()).<span class="ident">scale</span>(<span class="ident">scale</span>));
+                            <span class="ident">plnm</span>.<span class="ident">add_shifted</span>(<span class="ident">scale</span>, <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">-</span> <span class="ident">m</span> <span class="op">%</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>(), <span class="ident">segment</span>);
                             <span class="ident">omega</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span>(<span class="ident">omegas</span>.<span class="ident">shifted</span>.<span class="ident">unwrap</span>() <span class="op">*</span> <span class="ident">scale</span>);
                             <span class="ident">scale</span> <span class="kw-2">*</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">polyscale</span>;
                         }
                     }
                 } <span class="kw">else</span> {
                     <span class="macro">assert!</span>(<span class="ident">omegas</span>.<span class="ident">shifted</span>.<span class="ident">is_none</span>());
-                    <span class="kw">while</span> <span class="ident">offset</span> <span class="op">&lt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
-                        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="ident">DensePolynomial</span>::<span class="op">&lt;</span><span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::from_coefficients_slice</span>(
-                            <span class="kw-2">&amp;</span><span class="ident">p_i</span>.<span class="ident">coeffs</span>[<span class="ident">offset</span>..<span class="kw">if</span> <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">&gt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
+                    <span class="kw">while</span> <span class="ident">j</span> <span class="op">&lt;</span> <span class="ident">omegas</span>.<span class="ident">unshifted</span>.<span class="ident">len</span>() {
+                        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">p_i</span>.<span class="ident">coeffs</span>[<span class="ident">offset</span>
+                            ..<span class="kw">if</span> <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">&gt;</span> <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>() {
                                 <span class="ident">p_i</span>.<span class="ident">coeffs</span>.<span class="ident">len</span>()
                             } <span class="kw">else</span> {
                                 <span class="ident">offset</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>()
-                            }],
-                        );
+                            }];
+
                         <span class="comment">// always mixing in the unshifted segments</span>
-                        <span class="ident">p</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">scale</span>(<span class="ident">scale</span>);
+                        <span class="ident">plnm</span>.<span class="ident">add_unshifted</span>(<span class="ident">scale</span>, <span class="ident">segment</span>);
                         <span class="ident">omega</span> <span class="op">+</span><span class="op">=</span> <span class="kw-2">&amp;</span>(<span class="ident">omegas</span>.<span class="ident">unshifted</span>[<span class="ident">j</span>] <span class="op">*</span> <span class="ident">scale</span>);
                         <span class="ident">j</span> <span class="op">+</span><span class="op">=</span> <span class="number">1</span>;
                         <span class="ident">scale</span> <span class="kw-2">*</span><span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">polyscale</span>;
@@ -1950,7 +2222,8 @@ The folowing functionality is implemented
                 }
                 <span class="macro">assert_eq!</span>(<span class="ident">j</span>, <span class="ident">omegas</span>.<span class="ident">unshifted</span>.<span class="ident">len</span>());
             }
-            (<span class="ident">p</span>, <span class="ident">omega</span>)
+
+            (<span class="ident">plnm</span>.<span class="ident">to_dense_polynomial</span>(), <span class="ident">omega</span>)
         };
 
         <span class="kw">let</span> <span class="ident">rounds</span> <span class="op">=</span> <span class="ident">ceil_log2</span>(<span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>());
@@ -1976,7 +2249,7 @@ The folowing functionality is implemented
             .<span class="ident">map</span>(<span class="op">|</span>(<span class="ident">a</span>, <span class="ident">b</span>)<span class="op">|</span> <span class="kw-2">*</span><span class="ident">a</span> <span class="op">*</span> <span class="ident">b</span>)
             .<span class="ident">fold</span>(<span class="ident">Fr</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="ident">::zero</span>(), <span class="op">|</span><span class="ident">acc</span>, <span class="ident">x</span><span class="op">|</span> <span class="ident">acc</span> <span class="op">+</span> <span class="ident">x</span>);
 
-        <span class="ident">sponge</span>.<span class="ident">absorb_fr</span>(<span class="kw-2">&amp;</span>[<span class="ident">shift_scalar</span>(<span class="ident">combined_inner_product</span>)]);
+        <span class="ident">sponge</span>.<span class="ident">absorb_fr</span>(<span class="kw-2">&amp;</span>[<span class="ident">shift_scalar</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>(<span class="ident">combined_inner_product</span>)]);
 
         <span class="kw">let</span> <span class="ident">t</span> <span class="op">=</span> <span class="ident">sponge</span>.<span class="ident">challenge_fq</span>();
         <span class="kw">let</span> <span class="ident">u</span>: <span class="ident">G</span> <span class="op">=</span> <span class="ident">to_group</span>(<span class="ident">group_map</span>, <span class="ident">t</span>);
@@ -2029,7 +2302,8 @@ The folowing functionality is implemented
             <span class="ident">sponge</span>.<span class="ident">absorb_g</span>(<span class="kw-2">&amp;</span>[<span class="ident">l</span>]);
             <span class="ident">sponge</span>.<span class="ident">absorb_g</span>(<span class="kw-2">&amp;</span>[<span class="ident">r</span>]);
 
-            <span class="kw">let</span> <span class="ident">u</span> <span class="op">=</span> <span class="ident">squeeze_challenge</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">endo_r</span>, <span class="kw-2">&amp;mut</span> <span class="ident">sponge</span>);
+            <span class="kw">let</span> <span class="ident">u_pre</span> <span class="op">=</span> <span class="ident">squeeze_prechallenge</span>(<span class="kw-2">&amp;mut</span> <span class="ident">sponge</span>);
+            <span class="kw">let</span> <span class="ident">u</span> <span class="op">=</span> <span class="ident">u_pre</span>.<span class="ident">to_field</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">endo_r</span>);
             <span class="kw">let</span> <span class="ident">u_inv</span> <span class="op">=</span> <span class="ident">u</span>.<span class="ident">inverse</span>().<span class="ident">unwrap</span>();
 
             <span class="ident">chals</span>.<span class="ident">push</span>(<span class="ident">u</span>);
@@ -2059,7 +2333,7 @@ The folowing functionality is implemented
                 })
                 .<span class="ident">collect</span>();
 
-            <span class="ident">g</span> <span class="op">=</span> <span class="ident">G::combine_one</span>(<span class="kw-2">&amp;</span><span class="ident">g_lo</span>, <span class="kw-2">&amp;</span><span class="ident">g_hi</span>, <span class="ident">u</span>);
+            <span class="ident">g</span> <span class="op">=</span> <span class="ident">G::combine_one_endo</span>(<span class="self">self</span>.<span class="ident">endo_r</span>, <span class="self">self</span>.<span class="ident">endo_q</span>, <span class="kw-2">&amp;</span><span class="ident">g_lo</span>, <span class="kw-2">&amp;</span><span class="ident">g_hi</span>, <span class="ident">u_pre</span>);
         }
 
         <span class="macro">assert!</span>(<span class="ident">g</span>.<span class="ident">len</span>() <span class="op">==</span> <span class="number">1</span>);
@@ -2126,6 +2400,7 @@ The folowing functionality is implemented
     <span class="kw">where</span>
         <span class="ident">EFqSponge</span>: <span class="ident">FqSponge</span><span class="op">&lt;</span><span class="ident">Fq</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>, <span class="ident">G</span>, <span class="ident">Fr</span><span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span><span class="op">&gt;</span>,
         <span class="ident">RNG</span>: <span class="ident">RngCore</span> <span class="op">+</span> <span class="ident">CryptoRng</span>,
+        <span class="ident">G::BaseField</span>: <span class="ident">PrimeField</span>,
     {
         <span class="comment">// Verifier checks for all i,</span>
         <span class="comment">// c_i Q_i + delta_i = z1_i (G_i + b_i U_i) + z2_i H</span>
@@ -2190,7 +2465,7 @@ The folowing functionality is implemented
                 <span class="ident">combined_inner_product</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>(<span class="ident">evaluation_points</span>, <span class="ident">xi</span>, <span class="ident">r</span>, <span class="kw-2">&amp;</span><span class="ident">es</span>, <span class="self">self</span>.<span class="ident">g</span>.<span class="ident">len</span>())
             };
 
-            <span class="ident">sponge</span>.<span class="ident">absorb_fr</span>(<span class="kw-2">&amp;</span>[<span class="ident">shift_scalar</span>(<span class="ident">combined_inner_product0</span>)]);
+            <span class="ident">sponge</span>.<span class="ident">absorb_fr</span>(<span class="kw-2">&amp;</span>[<span class="ident">shift_scalar</span>::<span class="op">&lt;</span><span class="ident">G</span><span class="op">&gt;</span>(<span class="ident">combined_inner_product0</span>)]);
 
             <span class="kw">let</span> <span class="ident">t</span> <span class="op">=</span> <span class="ident">sponge</span>.<span class="ident">challenge_fq</span>();
             <span class="kw">let</span> <span class="ident">u</span>: <span class="ident">G</span> <span class="op">=</span> <span class="ident">to_group</span>(<span class="ident">group_map</span>, <span class="ident">t</span>);
@@ -2276,6 +2551,7 @@ The folowing functionality is implemented
                     <span class="kw">for</span> <span class="ident">comm_ch</span> <span class="kw">in</span> <span class="ident">comm</span>.<span class="ident">unshifted</span>.<span class="ident">iter</span>() {
                         <span class="ident">scalars</span>.<span class="ident">push</span>(<span class="ident">rand_base_i_c_i</span> <span class="op">*</span> <span class="ident">xi_i</span>);
                         <span class="ident">points</span>.<span class="ident">push</span>(<span class="kw-2">*</span><span class="ident">comm_ch</span>);
+
                         <span class="ident">xi_i</span> <span class="kw-2">*</span><span class="op">=</span> <span class="kw-2">*</span><span class="ident">xi</span>;
                     }
 
@@ -2285,6 +2561,7 @@ The folowing functionality is implemented
                                 <span class="comment">// xi^i sum_j r^j elm_j^{N - m} f(elm_j)</span>
                                 <span class="ident">scalars</span>.<span class="ident">push</span>(<span class="ident">rand_base_i_c_i</span> <span class="op">*</span> <span class="ident">xi_i</span>);
                                 <span class="ident">points</span>.<span class="ident">push</span>(<span class="ident">comm_ch</span>);
+
                                 <span class="ident">xi_i</span> <span class="kw-2">*</span><span class="op">=</span> <span class="kw-2">*</span><span class="ident">xi</span>;
                             }
                         }
@@ -2571,6 +2848,5 @@ The folowing functionality is implemented
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="commitment_dlog" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
-    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="commitment_dlog" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (51126be1b 2022-01-24)" ></div>
 </body></html>
