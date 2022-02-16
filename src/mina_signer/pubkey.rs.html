@@ -167,6 +167,7 @@
 <span id="162">162</span>
 <span id="163">163</span>
 <span id="164">164</span>
+<span id="165">165</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Public key structures and algorithms</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Definition of public key structure and helpers</span>
@@ -177,7 +178,8 @@
 <span class="kw">use</span> <span class="ident">sha2</span>::{<span class="ident">Digest</span>, <span class="ident">Sha256</span>};
 <span class="kw">use</span> <span class="ident">std::ops::Neg</span>;
 
-<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">BaseField</span>, <span class="ident">CurvePoint</span>, <span class="ident">FieldHelpers</span>};
+<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">BaseField</span>, <span class="ident">CurvePoint</span>};
+<span class="kw">use</span> <span class="ident">o1_utils::FieldHelpers</span>;
 
 <span class="doccomment">/// Length of Mina addresses</span>
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MINA_ADDRESS_LEN</span>: <span class="ident">usize</span> <span class="op">=</span> <span class="number">55</span>;
@@ -332,5 +334,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="mina_signer" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (51126be1b 2022-01-24)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="mina_signer" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (09cb29c64 2022-02-15)" ></div>
 </body></html>

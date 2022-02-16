@@ -751,7 +751,10 @@
 <span id="746">746</span>
 <span id="747">747</span>
 <span id="748">748</span>
-</pre><pre class="rust"><code><span class="doccomment">//! This source file implements the arithmetization of plookup constraints</span>
+<span id="749">749</span>
+<span id="750">750</span>
+<span id="751">751</span>
+</pre><pre class="rust"><code><span class="doccomment">//! This module implements the arithmetization of plookup constraints</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Because of our ZK-rows, we can&#39;t do the trick in the plookup paper of</span>
 <span class="doccomment">//! wrapping around to enforce consistency between the sorted lookup columns.</span>
@@ -875,7 +878,7 @@
 
 <span class="kw">use</span> <span class="ident">ark_poly</span>::{<span class="ident">Evaluations</span>, <span class="ident">Radix2EvaluationDomain</span> <span class="kw">as</span> <span class="ident">D</span>};
 
-<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::circuits::expr</span>::{<span class="ident">Column</span>, <span class="ident">ConstantExpr</span>, <span class="ident">Variable</span>, <span class="ident">E</span>};
+<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::circuits::expr</span>::{<span class="ident">prologue</span>::<span class="kw-2">*</span>, <span class="ident">Column</span>, <span class="ident">ConstantExpr</span>, <span class="ident">Variable</span>};
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::circuits</span>::{
     <span class="ident">gate</span>::{<span class="ident">CircuitGate</span>, <span class="ident">CurrOrNext</span>, <span class="ident">JointLookup</span>, <span class="ident">LocalPosition</span>, <span class="ident">LookupInfo</span>, <span class="ident">SingleLookup</span>},
     <span class="ident">wires::COLUMNS</span>,
@@ -885,6 +888,9 @@
 <span class="kw">use</span> <span class="ident">rand::Rng</span>;
 <span class="kw">use</span> <span class="ident">std::collections::HashMap</span>;
 <span class="kw">use</span> <span class="ident">CurrOrNext</span>::<span class="kw-2">*</span>;
+
+<span class="doccomment">/// Number of constraints produced by the argument.</span>
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CONSTRAINTS</span>: <span class="ident">usize</span> <span class="op">=</span> <span class="number">7</span>;
 
 <span class="comment">// TODO: Update for multiple tables</span>
 <span class="kw">fn</span> <span class="ident">single_lookup</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">FftField</span><span class="op">&gt;</span>(<span class="ident">s</span>: <span class="kw-2">&amp;</span><span class="ident">SingleLookup</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span>) -&gt; <span class="ident">E</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> {
@@ -1500,5 +1506,5 @@
     <span class="ident">res</span>
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-current-crate="kimchi" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (51126be1b 2022-01-24)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-current-crate="kimchi" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (09cb29c64 2022-02-15)" ></div>
 </body></html>

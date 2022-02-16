@@ -143,13 +143,15 @@
 <span id="138">138</span>
 <span id="139">139</span>
 <span id="140">140</span>
+<span id="141">141</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Keypair structures and algorithms</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Definition of secret key, keypairs and related helpers</span>
 
-<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">CurvePoint</span>, <span class="ident">FieldHelpers</span>, <span class="ident">PubKey</span>, <span class="ident">ScalarField</span>, <span class="ident">SecKey</span>};
+<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">CurvePoint</span>, <span class="ident">PubKey</span>, <span class="ident">ScalarField</span>, <span class="ident">SecKey</span>};
 <span class="kw">use</span> <span class="ident">ark_ec</span>::{<span class="ident">AffineCurve</span>, <span class="ident">ProjectiveCurve</span>};
 <span class="kw">use</span> <span class="ident">core::fmt</span>;
+<span class="kw">use</span> <span class="ident">o1_utils::FieldHelpers</span>;
 <span class="kw">use</span> <span class="ident">rand</span>::{<span class="self">self</span>, <span class="ident">CryptoRng</span>, <span class="ident">RngCore</span>};
 
 <span class="doccomment">/// Keypair structure</span>
@@ -284,5 +286,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="mina_signer" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (51126be1b 2022-01-24)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="mina_signer" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (09cb29c64 2022-02-15)" ></div>
 </body></html>
